@@ -17,13 +17,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        InfiniteBannerView infiniteBanner = (InfiniteBannerView) findViewById(R.id.infinitebanner);
+        InfiniteBannerView infiniteBannerView = (InfiniteBannerView) findViewById(R.id.infinitebanner);
         List<HorizontalItem> items = new ArrayList<>();
-        items.add(new HorizontalItem("Probando",R.mipmap.ic_launcher));
-        items.add(new HorizontalItem("Probando 2","http://i.imgur.com/DvpvklR.png"));
-        InfiniteBanner infiniteBanner1 = new InfiniteBanner(getApplicationContext(),infiniteBanner,items);
-        infiniteBanner1.setTextStyle(R.style.text_item);
-        infiniteBanner1.startScroll();
+        items.add(new HorizontalItem("Testing banner with drawable",R.mipmap.ic_launcher));
+        items.add(new HorizontalItem("Testing banner with url","http://i.imgur.com/DvpvklR.png"));
+        InfiniteBanner infiniteBanner = new InfiniteBanner(getApplicationContext(),infiniteBannerView,items);
+        infiniteBanner.setTextStyle(R.style.text_item);
+        infiniteBanner.setSpeed(10);
+        infiniteBanner.startScroll();
 
     }
 }
